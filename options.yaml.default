@@ -1,0 +1,8 @@
+Other:
+  always-exclude:
+    Name: Email
+  previous-selection:
+    Name: Email
+Teams:
+  TEAM-NAME:
+    Name: Email

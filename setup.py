@@ -6,6 +6,7 @@ setup(
     py_modules=['teamselect'],
     install_requires=[
         'Click',
+        'pyyaml',
     ],
     entry_points='''
         [console_scripts]
