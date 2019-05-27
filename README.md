@@ -9,11 +9,18 @@ I needed a way to pick failry randomly pick team members for tasks. Works with m
 ## HOW
 
 Clone repo locally
+
 `virtualenv -p python3 venv`
+
 Setup Venv
+
 `source venv/bin/activate`
+
 Install/get requirements
+
 `pip install .`
+## WHO
+?
 
 ### Config
 Move options.yaml.default to options.yaml, Add team members in the format Name: email
