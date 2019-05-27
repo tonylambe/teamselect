@@ -10,11 +10,11 @@ def loadConfig():
 
 
 def saveConfig(config):
-    with open("options.yaml", 'w') as stream:
-        yaml.dump(config, stream)
+    with open("options.yaml", 'w') as f:
+        yaml.dump(config, f)
 
 
-def teamselect(team, number, nodup):
+def teamselect(team, number, nodup, safe):
     conf = loadConfig()
     members = dict(conf.get('Teams').get(team))
     alex = conf.get('Other').get('always-exclude')
@@ -30,15 +30,18 @@ def teamselect(team, number, nodup):
                     del members[newitem]
 
     click.echo(chosen)
-    conf['Other']['previous-selection'] = chosen
-    saveConfig(conf)
+    if not safe:
+        conf['Other']['previous-selection'] = chosen
+        saveConfig(conf)
 
 @click.command()
 @click.argument('team')
 @click.option('--number','-n', default=1, help='Number of team members to choose.')
 @click.option('--nodup','-nd', is_flag=True, help='Exclude previousily selected team members.')
-def cli(team, number, nodup):
-    teamselect(team, number, nodup)
+@click.option('--safe', '-s', is_flag=True, help='Run without saving previously selected users.')
+def cli(team, number, nodup, safe):
+    teamselect(team, number, nodup, safe)
 
 if __name__ == "__main__":
+    #Only used for tests
     teamselect('SHRL', 3, True)
