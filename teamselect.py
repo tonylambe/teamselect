@@ -1,21 +1,22 @@
 """ Small utility to select x number of elements from a configurable array of values """
+
 import random
 import click
 import yaml
 
 
-def loadConfig():
+def loadconfig():
     with open('options.yaml', 'r') as f:
         return yaml.safe_load(f)
 
 
-def saveConfig(config):
+def saveconfig(config):
     with open("options.yaml", 'w') as f:
         yaml.dump(config, f)
 
 
 def teamselect(team, number, nodup, safe):
-    conf = loadConfig()
+    conf = loadconfig()
     members = dict(conf.get('Teams').get(team))
     alex = conf.get('Other').get('always-exclude')
     chosen = dict()
@@ -28,11 +29,10 @@ def teamselect(team, number, nodup, safe):
                 if newitem not in prev:
                     chosen[newitem] = members.get(newitem)
                     del members[newitem]
-
     click.echo(chosen)
     if not safe:
         conf['Other']['previous-selection'] = chosen
-        saveConfig(conf)
+        saveconfig(conf)
 
 @click.command()
 @click.argument('team')
