@@ -1,7 +1,12 @@
 # teamselect
-Quick util to randomly pick n number of users from a team. I needed a way to pick failry randomly pick team members for tasks. Works with multiple teams
 
-## Setup:
+## WOT
+Quick util to randomly pick n number of users from a team. 
+
+## WHY
+I needed a way to pick failry randomly pick team members for tasks. Works with multiple teams
+
+## HOW
 
 Clone repo locally
 `virtualenv -p python3 venv`
@@ -10,10 +15,10 @@ Setup Venv
 Install/get requirements
 `pip install .`
 
-## Config
+### Config
 Move options.yaml.default to options.yaml, Add team members in the format Name: email
 
-## Usage
+### Usage
 Usage: teamselect [OPTIONS] TEAM
 
 Options:
