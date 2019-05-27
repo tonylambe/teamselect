@@ -8,6 +8,7 @@ I needed a way to pick failry randomly pick team members for tasks. Works with m
 
 ## HOW
 
+### Setup
 Clone repo locally
 
 `virtualenv -p python3 venv`
@@ -19,8 +20,6 @@ Setup Venv
 Install/get requirements
 
 `pip install .`
-## WHO
-?
 
 ### Config
 Move options.yaml.default to options.yaml, Add team members in the format Name: email
@@ -37,6 +36,9 @@ Options:
   
   --help                Show this message and exit.
   
-  ### @TODO
-  Error handling 
+## WHO
+?
+
+## TODO
+Handle some errors 
   
