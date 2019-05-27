@@ -16,7 +16,7 @@ def saveConfig(config):
 
 def teamselect(team, number, nodup):
     conf = loadConfig()
-    members = conf.get('Teams').get(team)
+    members = dict(conf.get('Teams').get(team))
     alex = conf.get('Other').get('always-exclude')
     chosen = dict()
 
