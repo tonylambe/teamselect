@@ -4,7 +4,7 @@
 Quick util to randomly pick n number of users from a team. 
 
 ## WHY
-I needed a way to pick failry randomly pick team members for tasks. Works with multiple teams
+I needed a way to randomly pick team members for tasks. Works with multiple teams
 
 ## HOW
 
